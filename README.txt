@@ -7,10 +7,10 @@
                                                                                                         
 
                   
-Creado para MEDAC Nevada. 1º DAM
+Creado para MEDAC Nevada. 2º DAM
                                                                                      
 
 ➤ Twitch: twitch.tv/mscasandra
 ➤ Instagram: instagram.com/LittleMcJack
-➤ Twitter: twitter.com/LittleMcJack
+➤ Twitter: https://twitter.com/Casandra_GW
 ➤ GitHub: https://github.com/LittleCassy
