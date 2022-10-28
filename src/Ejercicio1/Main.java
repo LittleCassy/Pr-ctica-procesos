@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class Main {
 
-	static String originLanguage="es";
-	static String destinationLanguage = "en";
+	static String originLanguage="en";
+	static String destinationLanguage = "es";
 	static String textToTranslate="Test";
 	static long timeToSleep=(long)5000;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Init();
+		DefaultValues();
 	}
 	
 	public static void Init() {
@@ -23,9 +23,6 @@ public class Main {
 			String classpath = System.getProperty("java.class.path");
 			
 			ProcessBuilder pb;
-			AskCancellationTime();
-			AskOriginLanguage();
-			AskText();
 			
 			pb = new ProcessBuilder(bin, "-cp", classpath, "Ejercicio1.translator", originLanguage, destinationLanguage, textToTranslate);
 			Process myProc = pb.start();
@@ -49,7 +46,7 @@ public class Main {
 		System.out.println("////");
 		System.out.println("////////////////////////////////////////////////////////////////");
 		Scanner sc = new Scanner(System.in);
-		int aux=1;
+		int aux=10;
 		try {
 			aux = sc.nextInt();
 			timeToSleep=(long)(aux*1000);
@@ -105,10 +102,34 @@ public class Main {
 		String aux = sc.next().toUpperCase();
 		switch (aux) {
 		case "Y":
-			Init();
+			DefaultValues();
 			break;
 		case "N":
 			System.exit(1);
+			break;
+		default:
+			System.out.println("//// I don't understand you. Please use Y for Yes and N for No");
+		}
+		
+	}
+	
+	public static void DefaultValues() {
+		System.out.println("////////////////////////////////////////////////////////////////");
+		System.out.println("////");
+		System.out.println("//// Would you like to use default values?");
+		System.out.println("////");
+		System.out.println("////////////////////////////////////////////////////////////////");
+		Scanner sc = new Scanner(System.in);
+		String aux = sc.next().toUpperCase();
+		switch (aux) {
+		case "Y":
+			Init();
+			break;
+		case "N":
+			AskCancellationTime();
+			AskOriginLanguage();
+			AskText();
+			Init();
 			break;
 		default:
 			System.out.println("//// I don't understand you. Please use Y for Yes and N for No");

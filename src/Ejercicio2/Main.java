@@ -1,6 +1,7 @@
 package Ejercicio2;
 
 import java.io.File;
+import java.lang.ProcessBuilder.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,6 +44,8 @@ public class Main {
 			}
 			
 			pb.inheritIO();
+			pb.redirectError(Redirect.appendTo(new File("ERRORES.DAT")));
+			
 			Process myProc = pb.start();
 			
 		} catch (Exception e) {
